@@ -11,6 +11,8 @@ declare module 'styled-components' {
 
       cards: string;
 
+      text_button: string;
+
       inputs: string;
       input_text: string;
     };

@@ -5,8 +5,13 @@ export function usePersistState(key: string, initialState: any) {
   const [state, setState] = React.useState(initialState);
 
   React.useEffect(() => {
-    AsyncStorage.setItem(key, JSON.stringify(state));
-  }, [key, state]);
-
-  return [state, setState];
+    AsyncStorage.getItem(key).then((result) => {
+      if (result) {
+        setState(JSON.parse(result));
+      } else {
+        setState(initialState);
+      }
+    });
+  }, []);
+  return { state, setState };
 }

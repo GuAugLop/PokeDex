@@ -9,6 +9,8 @@ export default {
 
     cards: '#606060',
 
+    text_button: '#FFFFFF',
+
     inputs: '#CCCCCC',
     input_text: '#606060',
   },
